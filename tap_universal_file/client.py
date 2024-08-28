@@ -152,6 +152,8 @@ class FileStream(Stream):
         Returns:
             A dictionary representing a row containing additional information columns.
         """
+        if not row:
+            row = {}
         additional_info = self.config["additional_info"]
         if additional_info:
             row.update({"_sdc_file_name": file_name})
